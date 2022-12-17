@@ -1,29 +1,39 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import About from './about';
+import Menu from './menu';
+
+function Contact() {
+  return (
+    <>
+      <h1>Contact</h1>
+      <p>We'd love to hear from you!</p>
+    </>
+  );
+}
+
+function Home() {
+  return (
+    <div>Home</div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+      <Router>      
+      <Menu />
+        <Routes>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
+
 export default App;
+
