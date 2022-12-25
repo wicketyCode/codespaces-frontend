@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: ['./src/**/*.{js,jsx,tsx,ts}', './public/index.html', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}', "./node_modules/flowbite/**/*.js"],
+  content: ['./src/**/*.{js,jsx,tsx,ts}', './public/index.html', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}', "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class', // class, 'media' or boolean
   theme: {
     extend: {
