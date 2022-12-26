@@ -4,23 +4,21 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,tsx,ts}', './public/index.html', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}', "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class', // class, 'media' or boolean
   theme: {
-    extend: {
-      colors: {
-        gray: {
-          900: '#202225',
-          800: '#2f3136',
-          700: '#36393f',
-          600: '#4f545c',
-          400: '#d4d7dc',
-          300: '#e3e5e8',
-          200: '#ebedef',
-          100: '#f2f3f5',
-        },
+    theme: {
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
       },
-      spacing: {
-        88: '22rem',
-      },
-    },
+      extend: {
+        // Adds a new breakpoint in addition to the default breakpoints
+        screens: {
+          '3xl': '1600px',
+        }
+      }
+    }
   },
   plugins: [require('flowbite/plugin')],
 };
