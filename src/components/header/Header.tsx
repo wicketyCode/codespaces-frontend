@@ -22,7 +22,7 @@ export default function Header() {
   const location = useLocation();
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed inset-x-0">
-      {({ open: any }) => (
+      {({ open }: { open: boolean }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
@@ -30,7 +30,11 @@ export default function Header() {
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
-                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -80,8 +84,9 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
-                <Link
+                <Disclosure.Button
                   key={item.name}
+                  as={Link}
                   to={item.href}
                   className={classNames(
                     (item.path === location.pathname) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
@@ -90,7 +95,7 @@ export default function Header() {
                   aria-current={(item.path === location.pathname) ? "page" : undefined}
                 >
                   {item.name}
-                </Link>
+                </Disclosure.Button>
               ))}
             </div>
           </Disclosure.Panel>
