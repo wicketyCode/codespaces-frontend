@@ -8,7 +8,7 @@ const App = () => {
     <div className="App">
       <Header />
       <div className="flex justify-center items-center">
-        <div className="mb-24">
+        <div className="mb-24 mt-24">
           <Router />
         </div>
       </div>
