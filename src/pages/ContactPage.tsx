@@ -12,7 +12,9 @@ function ContactPage() {
       </div>
       <div className="mt-6 grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-8">
         {numbers.map((number) => (
-          <Card />
+          <div key={number.toString()}>
+            <Card />
+          </div>
         ))}
       </div>
     </>
