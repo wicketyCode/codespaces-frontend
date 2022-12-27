@@ -1,18 +1,20 @@
 //import axios from 'axios'
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
-import Router from './router';
-
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Router from "./router";
 
 const App = () => {
-
   return (
     <div className="App">
-        <Header />
-        <Router />
-        <Footer />
+      <Header />
+      <div className="flex justify-center items-center">
+        <div className="text-center bg-blue-400 mb-24">
+          <Router />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
