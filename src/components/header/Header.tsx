@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 //import './Header.scss';
 //import "flowbite";
 
@@ -9,9 +9,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import ProfileMenu from "../profileMenu/profileMenu";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About", href: "about", current: false },
-  { name: "Contact", href: "contact", current: false },
+  { name: "Home", href: "/", path: "/" },
+  { name: "About", href: "about", path: "/about" },
+  { name: "Contact", href: "contact", path: "/contact" },
 ];
 
 function classNames(...classes: string[]) {
@@ -19,6 +19,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
+  const location = useLocation();
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed inset-x-0">
       {({ open: any }) => (
@@ -52,10 +53,10 @@ export default function Header() {
                         key={item.name}
                         to={item.href}
                         className={classNames(
-                          item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          (item.path === location.pathname) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "px-3 py-2 rounded-md text-sm font-medium"
                         )}
-                        aria-current={item.current ? "page" : undefined}
+                        aria-current={(item.path === location.pathname) ? "page" : undefined}
                       >
                         {item.name}
                       </Link>
@@ -83,10 +84,10 @@ export default function Header() {
                   key={item.name}
                   to={item.href}
                   className={classNames(
-                    item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    (item.path === location.pathname) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={(item.path === location.pathname) ? "page" : undefined}
                 >
                   {item.name}
                 </Link>
