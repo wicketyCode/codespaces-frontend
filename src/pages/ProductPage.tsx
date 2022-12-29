@@ -33,7 +33,7 @@ function ProductPage() {
         {products?.map((product: Product) => (
           <Link
             key={product.id}
-            to={"details"}>
+            to={"details/"+product.id}>
             <Card product={product} />
           </Link>
         ))}
