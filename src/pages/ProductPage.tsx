@@ -2,14 +2,9 @@ import React from "react";
 import Card from "../components/card/Card";
 import { useEffect, useState } from "react";
 import AxiosWrapper from "../wrappers/AxiosWrapper";
+import { Product } from '../model/Product';
 
 
-interface Product {
-  description: string;
-  id: number;
-  name: string;
-  price: number;
-}
 
 function ContactPage() {
   const [products, setProducts] = useState<Product[]>();
@@ -40,7 +35,7 @@ function ContactPage() {
       <div className="mt-6 grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-8">
         {products?.map((product: Product) => (
           <div key={product.id}>
-            <Card />
+            <Card product={product}/>
           </div>
         ))}
 
