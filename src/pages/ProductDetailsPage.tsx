@@ -2,18 +2,20 @@ import React from "react";
 import { useEffect, useState } from "react";
 import AxiosWrapper from "../wrappers/AxiosWrapper";
 import { ProductDetails } from '../model/ProductDetails';
+import { useParams } from "react-router-dom";
 
 
 
 function ProductDetailsPage() {
   const [productDetails, setProductDetails] = useState<ProductDetails>();
+  const { id } = useParams();
 
   useEffect(() => {
 
 
     const axiosWrapper = new AxiosWrapper("http://localhost:4000");
 
-    axiosWrapper.get('/products/details/1')
+    axiosWrapper.get('/products/details/' + id)
       .then((response: { data: any; }) => {
         console.log(response.data);
         setProductDetails(response.data);
@@ -34,7 +36,7 @@ function ProductDetailsPage() {
       <div className="mt-6 grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-8">
         {
           <div key={productDetails?.id}>
-     
+
           </div>
         }
 
