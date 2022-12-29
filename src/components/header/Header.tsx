@@ -10,8 +10,8 @@ import ProfileMenu from "../profileMenu/profileMenu";
 
 const navigation = [
   { name: "Home", href: "/", path: "/" },
+  { name: "Products", href: "products", path: "/products" },
   { name: "About", href: "about", path: "/about" },
-  { name: "Contact", href: "contact", path: "/contact" },
 ];
 
 function classNames(...classes: string[]) {
