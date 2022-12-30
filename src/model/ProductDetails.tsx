@@ -1,3 +1,4 @@
+import { Color } from "./Color";
 import { Review } from "./Review";
 
 export interface ProductDetails {
@@ -7,6 +8,7 @@ export interface ProductDetails {
   description: string;
   images: string[];
   availableSizes: string[];
+  colors: Color[];
   material: string;
   brand: string;
   madeIn: string;
