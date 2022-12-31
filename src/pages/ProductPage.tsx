@@ -24,8 +24,8 @@ function ProductPage() {
   return (
     <>
       <div className="text-center">
-        <h1 className="text-2xl font-bold">T-shirts & polos for men</h1>
-        <p className="text-gray-700">
+        <h1 className="font-amalia font-bold text-4xl text-primary">T-shirts & polos for men</h1>
+        <p className="font-work-sans-medium text-base text-grey-3">
           This is the ContactPage of our application.
         </p>
       </div>

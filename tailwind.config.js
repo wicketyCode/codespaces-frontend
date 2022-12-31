@@ -1,25 +1,43 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
-  //content: ['./src/**/*.{js,jsx,tsx,ts}', './public/index.html', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}', "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}"],
   content: ['./src/**/*.{js,jsx,tsx,ts}', './public/index.html'],
-  darkMode: 'class', // class, 'media' or boolean
   theme: {
-    theme: {
+    screens: {
+      'sm': '576px',
+      'md': '768px',
+      'lg': '1300px',
+      'xl': '1600px',
+      '2xl': '1800px',
+    },
+    fontFamily: {
+      'amalia': ['AmaliaPro', 'serif'],
+      'work-sans-light': ['WorkSans-Light', 'Work Sans Light'],
+      'work-sans': ['WorkSans-Regular', 'Work Sans'],
+      'work-sans-medium': ['WorkSans-Medium', 'Work Sans Medium'],
+      'work-sans-bold': ['WorkSans-Bold', 'Work Sans Bold'],
+    },
+    extend: {
       screens: {
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
+        '3xl': '2000px',
       },
-      extend: {
-        // Adds a new breakpoint in addition to the default breakpoints
-        screens: {
-          '3xl': '1600px',
-        }
-      }
+      colors: {
+        primary: '#052951',
+        secondary: '#00B9EA',
+        black: '#000000',
+        white: '#FFFFFF',
+        'grey-1': '#F9F9F9',
+        'grey-2': '#EEEFF1',
+        'grey-3': '#909090',
+        'grey-4': '#E5E7EB',
+        'skyblue-1': '#EBF6FC',
+        'skyblue-2': '#D5EDFA',
+        orange: '#ff9900',
+        green: '#33cc33',
+        red: '#e10e49',
+        danger: '#C62828',
+        warning: '#F9A825',
+        success: '#558B2F',
+        yellow: '#FCD900',
+      },
     }
   },
-  //plugins: [require('flowbite/plugin')],
 };
