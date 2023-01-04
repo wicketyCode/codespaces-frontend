@@ -68,8 +68,8 @@ function ProductDetailsPage() {
                 />
               ))}
             </div>
-            <a href={productDetails?.reviewsTotal.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-              {productDetails?.reviewsTotal.totalCount} reviews
+            <a href={productDetails?.reviewsTotal?.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+              {productDetails?.reviewsTotal?.totalCount} reviews
             </a>
           </div>
         </div>
@@ -80,7 +80,7 @@ function ProductDetailsPage() {
           <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
             <RadioGroup.Label className="sr-only"> Choose a color </RadioGroup.Label>
             <div className="flex items-center space-x-3">
-              {productDetails?.colors.map((color) => (
+              {productDetails?.colors?.map((color) => (
                 <RadioGroup.Option
                   key={color.name}
                   value={color}
