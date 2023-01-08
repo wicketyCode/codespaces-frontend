@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 //import './Header.scss';
-//import "flowbite";
 
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
@@ -21,7 +20,7 @@ function classNames(...classes: string[]) {
 export default function Header() {
   const location = useLocation();
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed inset-x-0">
+    <Disclosure as="nav" className="bg-primary fixed inset-x-0 w-full overflow-hidden">
       {({ open }: { open: boolean }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

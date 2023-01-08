@@ -8,7 +8,7 @@ interface CardProps {
 const Card = (props: CardProps) => {
   return (
     <div
-      className="flex justify-center">
+      className="flex justify-center sm-mr-10 mb-10">
       <div className="rounded-lg shadow-lg bg-white max-w-xs">
         <img className="rounded-t-lg" src={props.product.image} alt="" />
         <div className="p-6">
